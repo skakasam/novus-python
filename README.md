@@ -1,2 +1,2 @@
 # novusskills-python
-Python Programming Language
+Learn Python Programming Language
