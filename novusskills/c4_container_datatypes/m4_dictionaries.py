@@ -71,3 +71,13 @@ total_orders = {}
 total_orders.update(instore_orders)
 total_orders.update(online_orders)
 print(f"  Total Orders: {total_orders}")
+
+################################################################################
+# Dictionary Comprehension
+################################################################################
+# Dictionary comprehension is a concise way to create dictionaries in Python.
+# It consists of an expression pair (key: value) followed by a for clause,
+# and can include optional if clauses.
+print("Dictionary Comprehension Examples:")
+squared_fruits = {fruit: count**2 for fruit, count in fruits.items()}
+print(f"  Squared Fruits: {squared_fruits}")

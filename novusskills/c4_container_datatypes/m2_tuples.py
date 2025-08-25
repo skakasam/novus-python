@@ -13,10 +13,11 @@ fruits = ("apple", "banana", "cherry")
 print(f"  Fruits Tuple: {fruits}")
 mixed_tuple = (1, 2.0, "three", [4])
 print(f"  Mixed Tuple: {mixed_tuple}")
-family = tuple(("John", "Emma", ["Adam", "Bella"]))
-print(f"  Family Tuple: {family}")
-team = tuple(["Alice", "Bob", ["Charlie", "David"]])
-print(f"  Team Tuple: {team}")
+# Can also instatiate using tuple() by passing a valid iterable
+# family = tuple(("John", "Emma", ["Adam", "Bella"]))
+# print(f"  Family Tuple: {family}")
+# team = tuple(["Alice", "Bob", ["Charlie", "David"]])
+# print(f"  Team Tuple: {team}")
 
 ###############################################################################
 # Accessing Tuple Elements
@@ -86,3 +87,12 @@ print("Tuple Unpacking Examples:")
 print(f"  Laptop (type: {type(laptop)}): {laptop}")
 print(f"  Monitor (type: {type(monitor)}): {monitor}")
 print(f"  Other Items (type: {type(other_items)}): {other_items}")
+
+###############################################################################
+# Tuple Comprehension
+###############################################################################
+# Tuple comprehension is not directly supported in Python, but we can use
+# generator expressions and the tuple() constructor to achieve similar results.
+print("Tuple Comprehension Examples:")
+squared = tuple(x**2 for x in range(10))
+print(f"  Squared Tuple: {squared}")
