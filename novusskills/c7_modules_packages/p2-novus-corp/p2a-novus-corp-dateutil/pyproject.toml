@@ -1,0 +1,16 @@
+# p2a-novus-corp-dateutil/pyproject.toml
+
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["novus_corp"]
+namespaces = true
+
+[project]
+name = "p2a-novus-corp-dateutil"
+version = "1.0.3"
+description = "Date Utilities for the Novus Corporation"
+license = { text = "Novus Corp Software License Agreement" }
