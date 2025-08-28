@@ -1,2 +1,3 @@
-# novusskills-python
+# novus-python
+
 Learn Python Programming Language
