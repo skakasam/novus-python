@@ -17,6 +17,7 @@
 # from my_package import my_module
 ################################################################################
 
+from ctypes import util
 from p1_regular_package import m1_modules_in_python as regular_module
 
 print()
@@ -52,34 +53,30 @@ print(" ", greet_user(name="Bob", lang_code="fr"))
 ################################################################################
 # Setting up Namespace Packages
 ################################################################################
-# Imagine a situation where two different teams are developing modules for
-# Novus-Corp, one focusing on date utilities and the other on magic numbers.
+# Imagine a situation where two different teams are developing utilities for
+# Snake-Corp, one focusing on Snake Say and the other on Snake Sing.
 #
 # Project Structure (Showing Relative Locations):
-#   p2-novus-corp/
+#   p2_namespace_package/
 #   │
-#   ├── p2a-novus-corp-dateutil/
-#   │   ├── novus_corp/
-#   │   │   └── date_utilities.py
+#   ├── p2a_snake_say/
+#   │   ├── snake/
+#   │   │   └── utils1.py
 #   │   └── pyproject.toml
 #   │
-#   ├── p2b-novus-corp-magic-numbers/
-#   │   ├── novus_corp/
-#   │   │   └── magic_numbers.py
-#   │   └── pyproject.toml
-#   │
-#   └── p2c-novus-service/
-#       └── novus_service.py
+#   └── p2b_snake_sing/
+#       ├── snake/
+#       │   └── utils2.py
+#       └── pyproject.toml
 #
-# With this we have the basic file structure of three packages. Both the utility packages,
-# p2a-novus-corp-dateutil and p2b-novus-corp-magic-numbers, start by defining an implicit
-# namespace package called novus_corp.
-# It’s an implicit namespace package because of the absence of an __init__.py file.
+# With this we have the basic file structure of two packages. Both the utility
+# packages, p2a_snake_say and p2b_snake_sing, start by defining an implicit
+# namespace package called snake. It’s an implicit namespace package because of
+# the absence of an __init__.py file.
 #
-# As for the import name, you’ll import the novus-corp-dateutil package as
-# novus_corp.date_utilities and novus_corp.magic_numbers.
-# In the corresponding pyproject.toml file, you fill out some information that setuptools
-# needs to properly install the package.
+# As for the import name, you’ll import the utils1.py and utils2.py modules as
+# snake.utils1 and snake.utils2. In the corresponding pyproject.toml file, you
+# fill out some information that setuptools needs to properly install the package.
 ################################################################################
 
 ################################################################################
@@ -90,25 +87,33 @@ print(" ", greet_user(name="Bob", lang_code="fr"))
 # the necessary configuration for setuptools to recognize the package.
 #
 # Steps:
-#   1. cd p2-novus-corp
-#   2. python -m pip install -e p2a-novus-corp-dateutil
-#   3. python -m pip install -e p2b-novus-corp-magic-numbers
+#   1. cd to p2_namespace_package location
+#   2. Install package 1 using
+#      `python -m pip install -e p2a_snake_say`
+#   3. Install package 2 using
+#      `python -m pip install -e p2b_snake_sing`
 #
 # Note:
 # The -e flag allows you to install the package in "editable" mode, which means
 # that changes to the source code will be immediately reflected in the installed
 # package without needing a reinstall. Typically, you would use this mode during
 # development to test changes without constantly reinstalling the package.
-# Otherwise, you would install the package normally (without -e) for production use.
 #
-# Note how you’re able to import both the utilities from the novus_corp namespace,
-# as if both belonged to the same package.
+# Otherwise, you would install the package normally (without -e) for production use.
 ################################################################################
 
-
-from novus_corp import date_utilities, magic_numbers  # pyright: ignore[reportMissingImports]
+################################################################################
+# Using the Installed Namespace Packages
+################################################################################
+# Note how you’re able to import both the utilities from the snake namespace,
+# as if both belonged to the same package.
+################################################################################
+from snake.utils1 import say as snake_say  # pyright: ignore[reportMissingImports]
+from snake.utils2 import sing as snake_sing  # pyright: ignore[reportMissingImports]
 
 print()
 print("Importing Modules from Namespace Package:")
-print(f"  Magic Number: {magic_numbers.secret_number_generator()}")
-print(f"  Days to Novus Day: {date_utilities.days_to_novus_day()}")
+print("\nSnake sayssss:")
+snake_say()
+print("\nSnake singsss:")
+snake_sing()
