@@ -4,10 +4,12 @@ from itertools import count
 from typing import Dict
 
 ################################################################################
-# Variables are labels that allow us to store, modify, and retrieve data easily
+# Variables are names that allow us to store, modify, and retrieve data easily
 # in memory. They are typically defined in snake_case (underscore between words)
 # and can hold various data types such as strings, numbers, lists, dictionaries,
 # custom types etc.
+#
+# In Python, assignments cause the variables to spring into existence automatically.
 ################################################################################
 message: str = "Hello, Python!"
 print(message)

@@ -74,3 +74,36 @@ message = "Python is awesome!"
 print(f"message           = {message}")
 print(f"message[0:6]      = {message[0:6]}")
 print(f"message[10:17]    = {message[10:17]}")
+
+###############################################################################
+# Raw Strings
+###############################################################################
+project_path = r"C:\Users\NovusSkills\Projects\Python\\"
+print(project_path[:-1])  # Prints the raw string with backslashes
+
+###############################################################################
+# F-Strings for String Interpolation
+# Syntax:
+# f"...literal...{expression [=] [!s, !r, or !a] [:formatspec]}...literal..."
+#
+# Where:
+# - `expression` is any valid Python expression
+# - `=` allows you to assign a name to the expression
+# - `!s`, `!r`, and `!a` are conversion flags for string, repr, and ascii
+# - `:formatspec` allows you to specify a format for the output
+#   - [[fill]align][sign][z][#][0][width][grouping][.precision][typecode]
+#   - fill can be any fill character other than `{` or `}`
+#   - align can be `<` (left), `>` (right), `=` (padding after the sign) or `^` (center)
+#   - sign can be `+`, `-`, or a space (to use a space for positive numbers)
+#   - z is for zero-padding
+#   - # is for alternate formatting
+#   - 0 is for leading zeros
+#   - width is the minimum width
+#   - grouping is for thousands separators
+#   - .precision is for decimal places
+#   - typecode is for the type of formatting (e.g., d for integers, f for floats)
+###############################################################################
+name = "Novus Skills"
+print(f"Hello, {name}!")  # Prints "Hello, Novus Skills!"
+price = 29.99
+print(f"{price=:<5.2f}")  # Prints "price=29.99"

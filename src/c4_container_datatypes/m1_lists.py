@@ -3,11 +3,6 @@
 ###############################################################################
 # List Creation
 ###############################################################################
-import numbers
-from os import name
-from tkinter.font import names
-
-
 print("List Creation Examples:")
 empty_list = []
 print(f"  Empty List: {empty_list}")

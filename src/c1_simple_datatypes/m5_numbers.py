@@ -51,6 +51,7 @@ print(f"1 + 2 / 3 * 5 = {1 + 2 / 3 * 5}")
 ################################################################################
 print(0.1 + 0.2)  # Prints 0.30000000000000004 due to floating-point precision issues
 print(round(0.1 + 0.2, 2))  # Prints 0.3, rounding to 2 decimal places
+print(f"Is 0.1 + 0.2 == 0.3? {0.1 + 0.2 == 0.3}")
 
 ################################################################################
 # Underscores in numeric literals for readability
